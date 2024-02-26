@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Blog - Inicio</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Ecommerce Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
+                <li><a href="{% url 'buscar_producto' %}">Buscar Producto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Últimos productos</h2>
+        <!-- Aquí puedes agregar código para mostrar los últimos productos agregados -->
+        {% for producto in ultimos_productos %}
+            <div>
+                <h3>{{ producto.nombre }}</h3>
+                <p>{{ producto.descripcion }}</p>
+                <p>Precio: ${{ producto.precio }}</p>
+            </div>
+        {% empty %}
+            <p>No hay productos disponibles.</p>
+        {% endfor %}
+    </main>
+    <footer>
+        <!-- Aquí puedes agregar contenido del pie de página -->
+    </footer>
+</body>
+</html>

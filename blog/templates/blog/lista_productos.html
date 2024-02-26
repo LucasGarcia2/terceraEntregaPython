@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Lista de Productos{% endblock %}
+
+{% block content %}
+    <h2>Lista de Productos</h2>
+    <ul>
+        {% for producto in productos %}
+            <li>{{ producto.nombre }} - {{ producto.precio }}</li>
+        {% empty %}
+            <li>No hay productos disponibles</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

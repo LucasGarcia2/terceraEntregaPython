@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Resultados de la Búsqueda</h2>
+    {% if resultados %}
+        <ul>
+            {% for producto in resultados %}
+                <li>{{ producto.nombre }} - {{ producto.descripcion }} - {{ producto.precio }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron resultados para la búsqueda.</p>
+    {% endif %}
+{% endblock %}

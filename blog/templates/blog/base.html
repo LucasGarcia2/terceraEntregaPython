@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Tienda Online{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Tienda Online</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'lista_productos' %}">Inicio</a></li>
+                <li><a href="{% url 'agregar_producto' %}">Agregar Producto</a></li>
+                <li><a href="{% url 'buscar_producto' %}">Buscar Producto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>Derechos Reservados &copy; 2024 Mi Tienda Online</p>
+    </footer>
+</body>
+</html>
